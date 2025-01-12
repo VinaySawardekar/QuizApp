@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  quiz-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: quiz-app:latest
+    container_name: quiz-app
+    ports:
+      - "8081:8081"
+    env_file:
+      - .dockerenv
+    networks:
+      - custom-quiz-app-network
+    restart: unless-stopped
+
+networks:
+  custom-quiz-app-network:
+    name: quiz-app-network
+    driver: bridge

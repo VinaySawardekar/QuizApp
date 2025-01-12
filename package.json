@@ -1,0 +1,55 @@
+{
+  "name": "quizapp",
+  "version": "1.0.0",
+  "description": "Build a RESTful APIs for a quiz application that allows users to answer multiple-choice questions and",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest",
+    "start": "npx ts-node index.ts",
+    "start:dev": "npm run swagger-autogen && npx prettier --write . && nodemon index.ts",
+    "build": "tsc --build && cp .env ./build/.env ",
+    "swagger-autogen": "node swagger.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VinaySawardekar/QuizApp.git"
+  },
+  "keywords": [
+    "Quiz",
+    "App"
+  ],
+  "author": "Vinay Sawardekar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VinaySawardekar/QuizApp/issues"
+  },
+  "homepage": "https://github.com/VinaySawardekar/QuizApp#readme",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "compression": "^1.7.5",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "joi": "^17.13.3",
+    "joi-typescript-validator": "^0.2.0",
+    "morgan": "^1.10.0",
+    "supertest": "^7.0.0",
+    "swagger-ui-express": "^5.0.1",
+    "tiny": "^0.0.10",
+    "ts-node": "^10.9.2",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.5",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
+    "swagger-autogen": "^2.23.7",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.3"
+  }
+}
